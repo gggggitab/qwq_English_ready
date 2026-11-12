@@ -1,0 +1,11 @@
+﻿# 构建时下载的词典词表
+src/raw/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# 系统垃圾
+.DS_Store
+Thumbs.db
+desktop.ini

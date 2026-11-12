@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>英文阅读器 · 原著 + 查词 + 阅读计划</title>
+<style>{{CSS}}</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<header class="bar">
+  <button class="ico" id="mBtn" title="目录 (T)" aria-label="目录">☰</button>
+  <span class="ttl" id="barTitle"></span>
+  <span class="sp"></span>
+  <button class="ico" id="homeBtn" title="书架" aria-label="书架">▤</button>
+  <button class="ico" id="planBtn" title="阅读计划" aria-label="阅读计划">☑</button>
+  <button class="ico" id="dictBtn" title="查词典" aria-label="查词典">⌕</button>
+  <button class="ico" id="fsBtn" title="字号" aria-label="字号">Aa</button>
+  <button class="ico" id="themeBtn" title="明暗" aria-label="明暗">◐</button>
+</header>
+
+<section id="lib">
+  <div class="libwrap">
+    <div class="libhd"><h1>书架</h1><span class="n" id="libN"></span></div>
+    <div class="grid" id="grid"></div>
+    <p class="hint" style="margin-top:26px">导入支持 <b>txt</b> 与 <b>epub</b>（无 DRM）。文件保存在这台电脑的浏览器里，不上传。<br>
+    txt 会自动识别 “Chapter 1 / 第一章” 这类分章标题；识别不到就按约 2,600 词一节切开。</p>
+  </div>
+</section>
+
+<section id="read"><div class="wrap" id="wrap"></div></section>
+
+<section id="gloss">
+  <div class="wrap">
+    <div class="vh" id="glossTitle">生词表</div>
+    <input class="gsearch" id="gq" placeholder="搜索单词或中文释义…" autocomplete="off" spellcheck="false">
+    <div id="glossOut"></div>
+  </div>
+</section>
+
+<section id="plan">
+  <div class="wrap">
+    <div class="vh">25 天阅读计划</div>
+    <div id="planOut"></div>
+  </div>
+</section>
+
+<section id="dict">
+  <div class="wrap">
+    <div class="vh">词典</div>
+    <input class="dsearch" id="dq" placeholder="输入英文单词，回车查询" autocomplete="off" spellcheck="false" autocapitalize="off">
+    <div id="dictOut"></div>
+  </div>
+</section>
+
+<aside id="drawer">
+  <div class="hd"><b>目录</b><span class="sp" style="flex:1"></span><button class="ico" id="closeBtn" aria-label="关闭">✕</button></div>
+  <div class="list" id="tocList"></div>
+</aside>
+<div id="scrim"></div>
+<div id="pop"></div>
+<div id="toast"></div>
+<input type="file" id="file" accept=".txt,.epub,text/plain,application/epub+zip" hidden>
+
+<script type="application/json" id="data">{{DATA}}</script>
+<script type="application/json" id="dictdata">{{DICT}}</script>
+<script type="application/json" id="plandata">{{PLAN}}</script>
+<script>{{JS}}</script>
+</body>
+</html>
